@@ -4,8 +4,9 @@
 IL2CPP, пакет `com.JamesWest.NoomiClone`, версия 2.4.3.1) — без Unity Editor и без
 исходников проекта.
 
-> **Готовый файл уже собран:** `NoomiClone-modded.apk` лежит в корне репозитория
-> (рядом с `archive (8).zip`). В нём три замены из `examples/`.
+> **Готовый файл уже собран и ПОДПИСАН:** `NoomiClone-modded.apk` лежит в корне
+> репозитория (рядом с `archive (8).zip`). В нём три замены из `examples/`,
+> подпись — схема **v2** (RSA-2048/SHA-256), Android 7+ её принимает.
 > Что именно поменялось — видно на картинке `modding/previews/before-after.png`.
 
 ```
@@ -20,6 +21,11 @@ modding/
 │   └── NoomiCoin.png               # монетка -> аметист
 ├── previews/
 │   └── before-after.png     # сравнение «до / после»
+├── apksign.py               # подпись APK схемой v2 на чистом Python
+├── keys/
+│   ├── debug-key.pem        # ключ, которым подписан готовый APK
+│   ├── debug-cert.pem
+│   └── README.md
 └── README.md
 ```
 
@@ -27,9 +33,14 @@ modding/
 
 ```bash
 unzip "archive (8).zip"                      # достаёт NoomiClone.apk
-pip install UnityPy pillow
+pip install UnityPy pillow cryptography
+
+# apply сам подпишет результат -> появится NoomiClone-modded-signed.apk
 python modding/noomi_visual.py apply --apk NoomiClone.apk \
        --replacements modding/examples --out NoomiClone-modded.apk
+
+python modding/noomi_visual.py verify --apk modding/NoomiClone-modded-signed.apk
+python modding/noomi_visual.py install --apk modding/NoomiClone-modded-signed.apk
 ```
 
 ## Установка
@@ -93,28 +104,54 @@ python noomi_visual.py icon --apk NoomiClone.apk \
 в этой сборке не отдаются как обычные ассеты. Если понадобится — это отдельная
 задача (распаковка бандлов + правка `Material.m_Colors`).
 
+## Подпись — почему она нужна и как работает
+
+Любая правка zip-содержимого убивает исходную подпись, и Android отвечает
+`Установочный пакет не подписан сертификатом` (INSTALL_PARSE_FAILED_NO_CERTIFICATES).
+`apksign.py` подписывает файл **схемой APK Signature Scheme v2** на чистом Python:
+
+* APK Signing Block (ID `0x7109871a`), алгоритм `0x0103` — RSA PKCS#1 v1.5 + SHA-256;
+* content digest считается по трём секциям (данные, Central Directory, EOCD)
+  блоками по 1 МиБ — точно как в спецификации;
+* ключ и самоподписанный сертификат генерируются автоматически
+  (`cryptography`), хранятся в `modding/keys/` и переиспользуются, чтобы
+  обновления мода ставились поверх предыдущей версии;
+* `verify` пересчитывает digest и проверяет подпись — ловит порчу файла.
+
+Проверено независимо: androguard видит `is_signed_v2: True` и
+`is_signed: True`; записи сертификата совпадают с нашими.
+
+```bash
+python noomi_visual.py sign   --apk in.apk --out out.apk     # подписать
+python noomi_visual.py verify --apk out.apk                  # проверить
+```
+
 ## Ограничения (важно)
 
-1. **Подпись.** Zip-структуру инструмент сохраняет, но подпись APK становится
-   недействительной. Перед установкой подпишите заново:
-   `apksigner sign --ks my.keystore NoomiClone-modded.apk` или uber-apk-signer.
-2. **Нет нативной части.** В этом APK отсутствует `lib/` — `libil2cpp.so` и
+1. **Нет нативной части.** В этом APK отсутствует `lib/` — `libil2cpp.so` и
    `libunity.so` вынесены в ABI-сплит (`split_config.arm64_v8a.apk`,
-   в манифесте видно `base__abi`). Пересобранный base-APK сам по себе не
-   запустится: нужен тот же сплит, а ставить — комплектом:
-   `adb install-multiple base.apk split_config.arm64_v8a.apk`.
+   в манифесте `requiredSplitTypes` / `base__abi`). Подписанный файл
+   **установится**, но при запуске упадёт без сплита. Ставить комплектом:
+
+   ```bash
+   adb install-multiple base.apk split_config.arm64_v8a.apk
+   ```
+2. **Подпись не совпадает с оригиналом.** Мод нельзя поставить поверх игры из
+   Play/APKPure — сначала удалите её (или подпишите мод тем же ключом, что и
+   оригинал, чего у нас нет).
 3. **PairIP.** В APK встроена защита PairIP (лицензионная проверка / Play
    Integrity). Переподписанный мод может отказаться запускаться — это не
    следствие правок графики.
 4. **Что менять нельзя.** Логика (физика, твист, цены, начисление монет,
    разблокировка) — нативный IL2CPP-код, `global-metadata.dat` зашифрован.
    Серверные вещи (коды карт Map Maker, облачный сейв, IAP) — на сервере.
-5. Игра — коммерческий проект JamesWest. Правки «для себя» ок; публиковать
-   моды с их ассетами/вырезанной рекламой — нет.
+5. Подпись только v2, без v1/v3. Для `minSdk 26` этого достаточно; для
+   устройств древнее Android 7 понадобился бы v1 (JAR signing).
 
 ## Что дальше можно добавить в инструмент
 
 * рекурсивная замена по маске (`--map old.png=new.png`);
 * батч-перекраска (hue/saturation) прямо в скрипте без Photoshop;
 * распаковка Addressables-бандлов (`assets/aa/Android/*`) для скинов и префабов;
-* автоподпись через `apksigner`, если он есть в системе.
+* v3/v4 подпись и `source stamp` (сейчас только v2);
+* проверка совместимости с ABI-сплитом, когда он появится.

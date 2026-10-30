@@ -24,7 +24,17 @@ NoomiClone visual patcher
     python noomi_visual.py icon --apk NoomiClone.apk --icon my_icon.png \
                                 --out NoomiClone-icon.apk
 
-Требуется: pip install UnityPy pillow
+    # 5. подписать готовый APK (схема v2, без Java/apksigner) и проверить
+    python noomi_visual.py sign   --apk NoomiClone-modded.apk --out fixed.apk
+    python noomi_visual.py verify --apk fixed.apk
+
+    # 6. напомнить, как это ставить
+    python noomi_visual.py install --apk fixed.apk
+
+После apply/icon файл подписывается автоматически (ключ modding/keys/debug-key.pem),
+потому что без подписи Android откажется его устанавливать. Отключить: --no-sign.
+
+Требуется: pip install UnityPy pillow cryptography
 """
 from __future__ import annotations
 
@@ -48,6 +58,11 @@ try:
 except ImportError:  # pragma: no cover
     sys.exit("Нужен Pillow: pip install pillow")
 
+try:
+    import apksign  # модуль подписи v2 из этой же папки
+except ImportError:  # pragma: no cover
+    apksign = None
+
 
 # ----------------------------------------------------------------------------
 # Константы
@@ -62,6 +77,9 @@ SKIP_EXT = (".resource", ".json", ".config", ".txt", ".hash", ".xml", ".bin")
 # Текстуры шрифтов (SDF-атласы) лежат в .resource-стриме и не декодируются
 # как обычные картинки — их специально пропускаем, иначе шрифты «поедут».
 FONT_TEXTURE_HINTS = (" SDF Atlas", "Font Texture")
+
+# Куда складывать ключ подписи по умолчанию (рядом со скриптом).
+KEY_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "keys")
 
 
 @dataclass
@@ -443,23 +461,97 @@ def cmd_apply(args) -> None:
     replacements = load_replacements(args.replacements)
     print(f"Замен в папке: {len(replacements)} ({args.replacements})")
     print(f"Исходный APK: {args.apk}")
-    report = patch_apk(args.apk, args.out, replacements,
+
+    tmp_out = args.out
+    report = patch_apk(args.apk, tmp_out, replacements,
                        allow_resize=not args.no_resize)
 
-    print(f"\nготово: {args.out}")
+    print(f"\nсобрано: {args.out}")
     print(f"  заменено: {len(report.replaced)}")
     print(f"  перезаписано файлов ассетов: {len(report.containers_written)}")
     if report.skipped:
         print("  пропущено:")
         for key, why in report.skipped:
             print(f"    - {key}: {why}")
-    print(_signature_notice(args.apk))
+    _finish(args)
 
 
 def cmd_icon(args) -> None:
     report = patch_icons(args.apk, args.out, args.icon)
-    print(f"\nготово: {args.out}  (иконок заменено: {len(report.replaced)})")
-    print(_signature_notice(args.apk))
+    print(f"\nсобрано: {args.out}  (иконок заменено: {len(report.replaced)})")
+    _finish(args)
+
+
+def cmd_sign(args) -> None:
+    if apksign is None:
+        sys.exit("Нет модуля apksign.py рядом со скриптом")
+    key, cert, created = apksign.load_key_and_cert(
+        args.key, args.cert, create_missing_to=args.key)
+    info = apksign.sign_apk(args.apk, args.out, key, cert)
+    res = apksign.verify_apk(args.out)
+    print(f"ключ: {'создан новый' if created else 'использован существующий'} ({args.key})")
+    print(f"подписано: {args.out}")
+    print(f"  схема: {res['scheme']}  алгоритм: {res['algorithm']}")
+    print(f"  сертификат: {res['cert_subject']}")
+    print(f"  SHA-256 сертификата: {res['cert_sha256']}")
+    print(f"  старая подпись заменена: {'да' if info['replaced_old_block'] else 'её не было'}")
+    print("  проверка: digest совпадает, подпись верна")
+
+
+def cmd_verify(args) -> None:
+    if apksign is None:
+        sys.exit("Нет модуля apksign.py рядом со скриптом")
+    res = apksign.verify_apk(args.apk)
+    print(f"{args.apk}: подпись v2 корректна")
+    for k, v in res.items():
+        print(f"  {k}: {v}")
+
+
+def cmd_install(args) -> None:
+    """Подсказка, как поставить результат на устройство."""
+    names = zipfile.ZipFile(args.apk).namelist()
+    has_libs = any(n.startswith("lib/") and n.endswith(".so") for n in names)
+    print(f"{args.apk}")
+    print(f"  нативных библиотек внутри: {'есть' if has_libs else 'НЕТ'}")
+    if not has_libs:
+        print(_abi_split_notice(args.apk))
+    sorted_names = sorted(n for n in names if n.startswith("lib/"))
+    if sorted_names:
+        print("  ABI: " + ", ".join(sorted({n.split('/')[1] for n in sorted_names})))
+    print(f"\n  adb install-multiple {args.apk} split_config.arm64_v8a.apk")
+
+
+def _finish(args) -> None:
+    """Общая концовка apply/icon: подписать и проверить."""
+    if args.no_sign:
+        print(_signature_notice(args.apk))
+        return
+    if apksign is None:
+        print("\nВНИМАНИЕ: модуль apksign.py не найден, файл остался БЕЗ подписи.")
+        print(_signature_notice(args.apk))
+        return
+
+    unsigned = args.out
+    signed = unsigned[:-4] + "-signed.apk" if unsigned.endswith(".apk") else unsigned + ".signed.apk"
+    key, cert, created = apksign.load_key_and_cert(
+        args.key, args.cert, create_missing_to=args.key)
+    apksign.sign_apk(unsigned, signed, key, cert)
+    res = apksign.verify_apk(signed)
+    os.remove(unsigned)          # неподписанный дубль не нужен
+    print(f"\nподписано (v2, RSA-2048/SHA-256): {signed}")
+    print(f"  ключ: {'новый' if created else 'существующий'} {args.key}")
+    print(f"  сертификат SHA-256: {res['cert_sha256'][:32]}...")
+    print(f"  проверка подписи: ok   <- Android должен принять установку файла")
+    print(_abi_split_notice(args.apk))
+
+
+def _abi_split_notice(apk_path: str) -> str:
+    return (
+        "\nВАЖНО (запуск, а не установка):\n"
+        "  * В этом APK нет lib/*.so — код Unity (libil2cpp.so, libunity.so) лежит\n"
+        "    в отдельном ABI-сплите split_config.arm64_v8a.apk. Подписанный файл\n"
+        "    установится, но при запуске упадёт без сплита. Ставить комплектом:\n"
+        "      adb install-multiple base.apk split_config.arm64_v8a.apk")
 
 
 def _signature_notice(apk_path: str) -> str:
@@ -468,17 +560,12 @@ def _signature_notice(apk_path: str) -> str:
     lines = [
         "",
         "ВАЖНО:",
-        "  * zip-структура APK сохранена, но подпись APK стала недействительной —",
-        "    перед установкой подпишите файл заново (apksigner / uber-apk-signer),",
-        "    иначе Android его не примет.",
+        "  * файл НЕ подписан — Android выдаст «Установочный пакет не подписан",
+        "    сертификатом». Подпишите: python noomi_visual.py sign --apk <файл>",
+        "    --out <файл-signed.apk>  (или уберите --no-sign).",
     ]
     if not has_libs:
-        lines += [
-            "  * В этом APK нет lib/*.so (нативная часть Unity лежит в отдельном",
-            "    ABI-сплите split_config.arm64_v8a.apk). Такой файл сам по себе не",
-            "    запустится: патчить нужно пару base.apk + ABI-сплит и ставить их",
-            "    вместе (adb install-multiple).",
-        ]
+        lines.append(_abi_split_notice(apk_path))
     return "\n".join(lines)
 
 
@@ -505,14 +592,40 @@ def build_parser() -> argparse.ArgumentParser:
     pa.add_argument("--out", required=True)
     pa.add_argument("--no-resize", action="store_true",
                     help="не подгонять размер картинки под текстуру")
+    _add_signing_flags(pa)
     pa.set_defaults(func=cmd_apply)
 
     pi = sub.add_parser("icon", help="заменить иконку приложения")
     pi.add_argument("--apk", required=True)
     pi.add_argument("--icon", required=True)
     pi.add_argument("--out", required=True)
+    _add_signing_flags(pi)
     pi.set_defaults(func=cmd_icon)
+
+    psg = sub.add_parser("sign", help="подписать готовый APK схемой v2")
+    psg.add_argument("--apk", required=True)
+    psg.add_argument("--out", required=True)
+    psg.add_argument("--key", default=os.path.join(KEY_DIR, "debug-key.pem"))
+    psg.add_argument("--cert", default=os.path.join(KEY_DIR, "debug-cert.pem"))
+    psg.set_defaults(func=cmd_sign)
+
+    pv = sub.add_parser("verify", help="проверить подпись v2")
+    pv.add_argument("--apk", required=True)
+    pv.set_defaults(func=cmd_verify)
+
+    pins = sub.add_parser("install", help="как поставить APK на устройство")
+    pins.add_argument("--apk", required=True)
+    pins.set_defaults(func=cmd_install)
     return p
+
+
+def _add_signing_flags(p: argparse.ArgumentParser) -> None:
+    p.add_argument("--no-sign", action="store_true",
+                   help="не подписывать результат (файл не установится)")
+    p.add_argument("--key", default=os.path.join(KEY_DIR, "debug-key.pem"),
+                   help="PEM-ключ для подписи (по умолчанию debug-ключ в modding/keys)")
+    p.add_argument("--cert", default=os.path.join(KEY_DIR, "debug-cert.pem"),
+                   help="PEM-сертификат для подписи")
 
 
 def main(argv=None) -> None:
