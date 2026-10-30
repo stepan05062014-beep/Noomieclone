@@ -22,9 +22,11 @@ modding/
 ├── previews/
 │   └── before-after.png     # сравнение «до / после»
 ├── apksign.py               # подпись APK схемой v2 на чистом Python
+├── build_installable.py     # XAPK -> подписанный base + сплиты (install-multiple)
 ├── keys/
 │   ├── debug-key.pem        # ключ, которым подписан готовый APK
 │   ├── debug-cert.pem
+│   ├── debug-key.p12        # тот же ключ для MT Manager / apksigner (alias: noomi)
 │   └── README.md
 └── README.md
 ```
@@ -103,6 +105,51 @@ python noomi_visual.py icon --apk NoomiClone.apk \
 префабы лежат в Addressables-бандлах (`assets/aa/Android/*.bundle`), которые
 в этой сборке не отдаются как обычные ассеты. Если понадобится — это отдельная
 задача (распаковка бандлов + правка `Material.m_Colors`).
+
+## Если есть XAPK: как собрать запускаемый комплект
+
+Полный бандл игры (`.xapk`/`.apkm`) — это zip с base APK + ABI-сплитами, в одном
+из которых лежат `libil2cpp.so` / `libunity.so`. Ставится он только комплектом,
+и **все файлы должны быть подписаны одним сертификатом** — иначе Android ответит
+`INSTALL_FAILED_INVALID_APK` (split signature mismatch).
+
+```bash
+python modding/build_installable.py --xapk Game.xapk --out ready/ \
+       --replacements modding/examples
+```
+
+Скрипт: распаковывает XAPK → находит base и сплиты → подставляет текстуры в base
+→ подписывает **всё одним ключом** (v2) → печатает готовую команду установки.
+
+Проверено на синтетическом XAPK (base 38 МБ + сплит 3 МБ): на выходе
+`base-signed.apk` и `split_config.arm64_v8a-signed.apk` с одинаковым отпечатком
+сертификата `3b3538d7…`, подпись v2 у обоих проверяется.
+
+Если XAPK уже распакован — `--dir unpacked/`.
+
+### Передача большого файла в репозиторий
+
+| Способ | Лимит | Комментарий |
+|---|---|---|
+| Веб-интерфейс GitHub (кнопка загрузки) | **25 МБ** | сюда 83 МБ не влезет |
+| `git push` (обычный git) | 100 МБ на файл (предупреждение с 50 МБ) | наш APK на 38 МБ попал именно так |
+| GitHub Release (ассет) | 2 ГБ | но у агента в песочнице нет доступа к uploads/objects.github.com |
+
+То есть XAPK на 83 МБ **можно** запушить обычным git — «сильно сжимать» ничего
+не нужно (и не поможет: внутри уже сжатые apk).
+
+### Установка без ПК (телефон)
+
+Если комплекс собран у вас, а не у меня — вариант через MT Manager:
+
+1. `modding/keys/debug-key.p12` — ключ, которым подписан `NoomiClone-modded.apk`
+   (alias `noomi`, пароль `noomi`). Импортируйте его в MT Manager:
+   *Настройки → Подпись → выбрать keystore → `debug-key.p12`*.
+2. Достаньте из XAPK `split_config.arm64_v8a.apk` и подпишите его этим ключом
+   (долгое нажатие → Подписать, схема v2).
+3. Ставьте оба файла сразу: MT Manager → *Install multiple* (или SAI).
+
+Подпись сплита тем же ключом, что и base, — обязательна.
 
 ## Подпись — почему она нужна и как работает
 
