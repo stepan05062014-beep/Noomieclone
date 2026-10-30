@@ -1,0 +1,1232 @@
+[
+  {
+    "name": "ApplePayWhite",
+    "key": "ApplePayWhite",
+    "width": 121,
+    "height": 48,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/0156c4509ffa2c544aba0c0a9e69ba6b",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Oswald Bold SDF Atlas",
+    "key": "Oswald Bold SDF Atlas",
+    "width": 0,
+    "height": 0,
+    "format": "Alpha8",
+    "container": "assets/bin/Data/0161d805a3764c089bef00bfe00793f5",
+    "path_id": 2,
+    "streamed": false
+  },
+  {
+    "name": "GooglePayWhite",
+    "key": "GooglePayWhite",
+    "width": 432,
+    "height": 172,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/09c8d0b446719034a80b46914775b38d",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "GooglePlayWordmark",
+    "key": "GooglePlayWordmark",
+    "width": 424,
+    "height": 80,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/0e5f56414d5c14e669bbafd38a45ad7a",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Wipe Pattern - Circle",
+    "key": "Wipe Pattern - Circle",
+    "width": 64,
+    "height": 64,
+    "format": "Alpha8",
+    "container": "assets/bin/Data/10c49fcd9c64421db7c0133e61e55f97",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Bangers SDF Atlas",
+    "key": "Bangers SDF Atlas",
+    "width": 0,
+    "height": 0,
+    "format": "Alpha8",
+    "container": "assets/bin/Data/125cb55b44b24c4393181402bc6200e6",
+    "path_id": 2,
+    "streamed": false
+  },
+  {
+    "name": "GooglePay",
+    "key": "GooglePay",
+    "width": 432,
+    "height": 172,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/134c27604f4806643999039670f88346",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Sunny Days - Seamless",
+    "key": "Sunny Days - Seamless",
+    "width": 512,
+    "height": 256,
+    "format": "ETC_RGB4",
+    "container": "assets/bin/Data/17c350171f7a3ca479f830547c66d187",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Fruit Jelly (B&W)",
+    "key": "Fruit Jelly (B&W)",
+    "width": 512,
+    "height": 512,
+    "format": "ETC_RGB4",
+    "container": "assets/bin/Data/1cdc5b506b1a4a33a53c30669ced1f51",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "AppleInAppPurchase1lnWhite",
+    "key": "AppleInAppPurchase1lnWhite",
+    "width": 370,
+    "height": 44,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/1f92448d554f040cc94ad62b9bdb0508",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Floor Cement",
+    "key": "Floor Cement",
+    "width": 512,
+    "height": 512,
+    "format": "ETC_RGB4",
+    "container": "assets/bin/Data/283f897e4925411ebbaa758b4cb13fc2",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Gradient Diagonal (Color)",
+    "key": "Gradient Diagonal (Color)",
+    "width": 16,
+    "height": 16,
+    "format": "ETC_RGB4",
+    "container": "assets/bin/Data/2ce5c55e85304b819a1826ecbc839aa5",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "LiberationSans SDF Atlas",
+    "key": "LiberationSans SDF Atlas",
+    "width": 0,
+    "height": 0,
+    "format": "Alpha8",
+    "container": "assets/bin/Data/2e498d1c8094910479dc3e1b768306a4",
+    "path_id": 2,
+    "streamed": false
+  },
+  {
+    "name": "Lock",
+    "key": "Lock",
+    "width": 320,
+    "height": 320,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/3ac87d4bf0eb82a42ba54f6f8fe18bc3",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Font Texture",
+    "key": "Font Texture",
+    "width": 0,
+    "height": 0,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/4beb055f07aaff244873dec698d0363e",
+    "path_id": 2,
+    "streamed": false
+  },
+  {
+    "name": "Instagram",
+    "key": "Instagram",
+    "width": 1024,
+    "height": 1024,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/4db0268a0eab5014e89a7e6e07f589b9",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Roboto-Bold SDF Atlas",
+    "key": "Roboto-Bold SDF Atlas",
+    "width": 0,
+    "height": 0,
+    "format": "Alpha8",
+    "container": "assets/bin/Data/5302535af1044152a457ed104f1f4b91",
+    "path_id": 2,
+    "streamed": false
+  },
+  {
+    "name": "Font Texture",
+    "key": "Font Texture#1",
+    "width": 0,
+    "height": 0,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/5dd49b3eacc540408c98eee0de38e0f1",
+    "path_id": 2,
+    "streamed": false
+  },
+  {
+    "name": "AppleInAppPurchase1ln",
+    "key": "AppleInAppPurchase1ln",
+    "width": 370,
+    "height": 44,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/6fa6673c15e05410da95cebffbeba0a5",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Share One App",
+    "key": "Share One App",
+    "width": 1000,
+    "height": 400,
+    "format": "RGB24",
+    "container": "assets/bin/Data/7383f9ae00ae7404099de2b15dfbc5a8",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Font Texture",
+    "key": "Font Texture#2",
+    "width": 0,
+    "height": 0,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/8a2b9e2a607dd2143b58c44bc32410b4",
+    "path_id": 2,
+    "streamed": false
+  },
+  {
+    "name": "Anton SDF Atlas",
+    "key": "Anton SDF Atlas",
+    "width": 0,
+    "height": 0,
+    "format": "Alpha8",
+    "container": "assets/bin/Data/8a89fa14b10d46a99122fd4f73fca9a2",
+    "path_id": 2,
+    "streamed": false
+  },
+  {
+    "name": "LiberationSans SDF Atlas",
+    "key": "LiberationSans SDF Atlas#1",
+    "width": 1024,
+    "height": 1024,
+    "format": "Alpha8",
+    "container": "assets/bin/Data/8f586378b4e144a9851e7b34d9b748ee",
+    "path_id": 2,
+    "streamed": false
+  },
+  {
+    "name": "video-camera-white-icon",
+    "key": "video-camera-white-icon",
+    "width": 512,
+    "height": 512,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/92593cd78d3827d45987827073477741",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Coda",
+    "key": "Coda",
+    "width": 150,
+    "height": 40,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/94b3bd9286d130c46a70080bf321205a",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Font Texture",
+    "key": "Font Texture#3",
+    "width": 0,
+    "height": 0,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/997a43b767814dd0a7642ec9b78cba41",
+    "path_id": 2,
+    "streamed": false
+  },
+  {
+    "name": "MouseCursorArrow",
+    "key": "MouseCursorArrow",
+    "width": 32,
+    "height": 32,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/9c4f7c434dc500448b24eb25af7314d7",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Atlas",
+    "key": "Atlas",
+    "width": 128,
+    "height": 128,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/9e228e36ed08a43759028773fa8219ca",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Soft",
+    "key": "Soft",
+    "width": 128,
+    "height": 128,
+    "format": "Alpha8",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 10001,
+    "streamed": false
+  },
+  {
+    "name": "Font Texture",
+    "key": "Font Texture#4",
+    "width": 0,
+    "height": 0,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 10103,
+    "streamed": false
+  },
+  {
+    "name": "EscToExit_back",
+    "key": "EscToExit_back",
+    "width": 74,
+    "height": 71,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 10401,
+    "streamed": false
+  },
+  {
+    "name": "EscToExit_Text",
+    "key": "EscToExit_Text",
+    "width": 267,
+    "height": 20,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 10402,
+    "streamed": false
+  },
+  {
+    "name": "UnityWatermark-trial-big",
+    "key": "UnityWatermark-trial-big",
+    "width": 512,
+    "height": 94,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 10406,
+    "streamed": false
+  },
+  {
+    "name": "UnityWatermark-trial",
+    "key": "UnityWatermark-trial",
+    "width": 76,
+    "height": 14,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 10407,
+    "streamed": false
+  },
+  {
+    "name": "UnityWatermark-edu",
+    "key": "UnityWatermark-edu",
+    "width": 148,
+    "height": 17,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 10409,
+    "streamed": false
+  },
+  {
+    "name": "UnityWatermark-dev",
+    "key": "UnityWatermark-dev",
+    "width": 115,
+    "height": 17,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 10410,
+    "streamed": false
+  },
+  {
+    "name": "WarningSign",
+    "key": "WarningSign",
+    "width": 64,
+    "height": 64,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 10411,
+    "streamed": false
+  },
+  {
+    "name": "UnityWatermark-proto",
+    "key": "UnityWatermark-proto",
+    "width": 87,
+    "height": 13,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 10413,
+    "streamed": false
+  },
+  {
+    "name": "box",
+    "key": "box",
+    "width": 12,
+    "height": 12,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11001,
+    "streamed": false
+  },
+  {
+    "name": "button active",
+    "key": "button active",
+    "width": 12,
+    "height": 12,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11002,
+    "streamed": false
+  },
+  {
+    "name": "button hover",
+    "key": "button hover",
+    "width": 12,
+    "height": 12,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11003,
+    "streamed": false
+  },
+  {
+    "name": "button on hover",
+    "key": "button on hover",
+    "width": 12,
+    "height": 12,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11004,
+    "streamed": false
+  },
+  {
+    "name": "button on",
+    "key": "button on",
+    "width": 12,
+    "height": 12,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11005,
+    "streamed": false
+  },
+  {
+    "name": "button",
+    "key": "button",
+    "width": 12,
+    "height": 12,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11006,
+    "streamed": false
+  },
+  {
+    "name": "horizontal scrollbar thumb",
+    "key": "horizontal scrollbar thumb",
+    "width": 12,
+    "height": 12,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11007,
+    "streamed": false
+  },
+  {
+    "name": "horizontal scrollbar",
+    "key": "horizontal scrollbar",
+    "width": 18,
+    "height": 15,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11008,
+    "streamed": false
+  },
+  {
+    "name": "horizontalslider",
+    "key": "horizontalslider",
+    "width": 8,
+    "height": 7,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11009,
+    "streamed": false
+  },
+  {
+    "name": "slider thumb active",
+    "key": "slider thumb active",
+    "width": 8,
+    "height": 12,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11010,
+    "streamed": false
+  },
+  {
+    "name": "slider thumb",
+    "key": "slider thumb",
+    "width": 8,
+    "height": 12,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11011,
+    "streamed": false
+  },
+  {
+    "name": "slidert humb hover",
+    "key": "slidert humb hover",
+    "width": 8,
+    "height": 12,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11012,
+    "streamed": false
+  },
+  {
+    "name": "toggle active",
+    "key": "toggle active",
+    "width": 14,
+    "height": 14,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11013,
+    "streamed": false
+  },
+  {
+    "name": "toggle hover",
+    "key": "toggle hover",
+    "width": 14,
+    "height": 14,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11014,
+    "streamed": false
+  },
+  {
+    "name": "toggle on hover",
+    "key": "toggle on hover",
+    "width": 14,
+    "height": 14,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11015,
+    "streamed": false
+  },
+  {
+    "name": "toggle on",
+    "key": "toggle on",
+    "width": 14,
+    "height": 14,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11016,
+    "streamed": false
+  },
+  {
+    "name": "toggle on active",
+    "key": "toggle on active",
+    "width": 14,
+    "height": 14,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11017,
+    "streamed": false
+  },
+  {
+    "name": "toggle",
+    "key": "toggle",
+    "width": 14,
+    "height": 14,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11018,
+    "streamed": false
+  },
+  {
+    "name": "vertical scrollbar thumb",
+    "key": "vertical scrollbar thumb",
+    "width": 12,
+    "height": 12,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11019,
+    "streamed": false
+  },
+  {
+    "name": "vertical scrollbar",
+    "key": "vertical scrollbar",
+    "width": 15,
+    "height": 18,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11020,
+    "streamed": false
+  },
+  {
+    "name": "verticalslider",
+    "key": "verticalslider",
+    "width": 7,
+    "height": 8,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11021,
+    "streamed": false
+  },
+  {
+    "name": "window on",
+    "key": "window on",
+    "width": 17,
+    "height": 27,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11022,
+    "streamed": false
+  },
+  {
+    "name": "window",
+    "key": "window",
+    "width": 17,
+    "height": 27,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11023,
+    "streamed": false
+  },
+  {
+    "name": "textfield",
+    "key": "textfield",
+    "width": 12,
+    "height": 12,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11024,
+    "streamed": false
+  },
+  {
+    "name": "textfield on",
+    "key": "textfield on",
+    "width": 12,
+    "height": 12,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11025,
+    "streamed": false
+  },
+  {
+    "name": "textfield hover",
+    "key": "textfield hover",
+    "width": 12,
+    "height": 12,
+    "format": "RGBA4444",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 11026,
+    "streamed": false
+  },
+  {
+    "name": "UnitySplash-HolographicTrackingLoss",
+    "key": "UnitySplash-HolographicTrackingLoss",
+    "width": 32,
+    "height": 32,
+    "format": "ETC_RGB4",
+    "container": "assets/bin/Data/Resources/unity default resources",
+    "path_id": 15000,
+    "streamed": false
+  },
+  {
+    "name": "Default Sprites",
+    "key": "Default Sprites",
+    "width": 512,
+    "height": 512,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/a0fc465d6cf04254a2938578735e2383",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "ApplePay",
+    "key": "ApplePay",
+    "width": 121,
+    "height": 48,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/a3f1b77fbe4fad241ab02703bb649087",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "NoomiCoin",
+    "key": "NoomiCoin",
+    "width": 33,
+    "height": 33,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/a8494784f0d222d4783a0a53a8d5155a",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "GooglePlayWordmarkWhite",
+    "key": "GooglePlayWordmarkWhite",
+    "width": 424,
+    "height": 80,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/bdad3cf3dd9714ade8c87ba5fe90551b",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "WebshopWhite",
+    "key": "WebshopWhite",
+    "width": 40,
+    "height": 40,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/c3f9a2f04563497bbe47c2de06acaa93",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Atlas",
+    "key": "Atlas#1",
+    "width": 128,
+    "height": 128,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/c9578b58808464df9b11892b7417a585",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Tik Tok",
+    "key": "Tik Tok",
+    "width": 1024,
+    "height": 1024,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/c98c5b1cf955e664499fc98edbe211a6",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Unity Atlas",
+    "key": "Unity Atlas",
+    "width": 1024,
+    "height": 1024,
+    "format": "Alpha8",
+    "container": "assets/bin/Data/c9adb1f542a93ae489bacfeae21e8394",
+    "path_id": 2,
+    "streamed": false
+  },
+  {
+    "name": "Font Texture",
+    "key": "Font Texture#5",
+    "width": 0,
+    "height": 0,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/c9f6d0e7bc8541498c9a4799ba184ede",
+    "path_id": 2,
+    "streamed": false
+  },
+  {
+    "name": "Share Entire Screen",
+    "key": "Share Entire Screen",
+    "width": 1000,
+    "height": 400,
+    "format": "RGB24",
+    "container": "assets/bin/Data/caa6cb6222e647e4493f17434d28206a",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "CodaWhite",
+    "key": "CodaWhite",
+    "width": 150,
+    "height": 40,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/ce4e6db66902e604f950e816a61def86",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "StripeWhite",
+    "key": "StripeWhite",
+    "width": 94,
+    "height": 40,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/d286fcb5d11c86e4aac2e79e50f86b90",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Electronic Highway Sign SDF Atlas",
+    "key": "Electronic Highway Sign SDF Atlas",
+    "width": 0,
+    "height": 0,
+    "format": "Alpha8",
+    "container": "assets/bin/Data/dc36b3fdc14f47ebb36fd484a67e268a",
+    "path_id": 2,
+    "streamed": false
+  },
+  {
+    "name": "NotoSans-Regular SDF Atlas 1",
+    "key": "NotoSans-Regular SDF Atlas 1",
+    "width": 512,
+    "height": 512,
+    "format": "Alpha8",
+    "container": "assets/bin/Data/dfcf6ceff627068489f0b11dcf81135b",
+    "path_id": 2,
+    "streamed": false
+  },
+  {
+    "name": "NotoSans-Regular SDF Atlas",
+    "key": "NotoSans-Regular SDF Atlas",
+    "width": 512,
+    "height": 512,
+    "format": "Alpha8",
+    "container": "assets/bin/Data/dfcf6ceff627068489f0b11dcf81135b",
+    "path_id": 3,
+    "streamed": false
+  },
+  {
+    "name": "EmojiOne",
+    "key": "EmojiOne",
+    "width": 512,
+    "height": 512,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/dffef66376be4fa480fb02b19edbe903",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Font Texture",
+    "key": "Font Texture#6",
+    "width": 0,
+    "height": 0,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/e3265ab4bf004d28a9537516768c1c75",
+    "path_id": 2,
+    "streamed": false
+  },
+  {
+    "name": "Discord",
+    "key": "Discord",
+    "width": 1024,
+    "height": 1024,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/ed2abf4389b24ec4c94c81fd1fea9b66",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Brushed Metal 3",
+    "key": "Brushed Metal 3",
+    "width": 512,
+    "height": 256,
+    "format": "ETC_RGB4",
+    "container": "assets/bin/Data/f88677df267a41d6be1e7a6133e7d227",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "DropCap Numbers",
+    "key": "DropCap Numbers",
+    "width": 512,
+    "height": 512,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/fd09957580ac4326916010f1f260975b",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Webshop",
+    "key": "Webshop",
+    "width": 40,
+    "height": 40,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/fed1ba06f53f4dab991477d48e1d670a",
+    "path_id": 1,
+    "streamed": false
+  },
+  {
+    "name": "Font Texture",
+    "key": "Font Texture#7",
+    "width": 0,
+    "height": 0,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/ff8f2dd45915f004b8af3c6232217107",
+    "path_id": 2,
+    "streamed": false
+  },
+  {
+    "name": "UISprite",
+    "key": "UISprite",
+    "width": 32,
+    "height": 32,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 4,
+    "streamed": false
+  },
+  {
+    "name": "Background",
+    "key": "Background",
+    "width": 32,
+    "height": 32,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 5,
+    "streamed": false
+  },
+  {
+    "name": "it",
+    "key": "it",
+    "width": 160,
+    "height": 107,
+    "format": "RGB24",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 6,
+    "streamed": false
+  },
+  {
+    "name": "id",
+    "key": "id",
+    "width": 160,
+    "height": 107,
+    "format": "RGB24",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 7,
+    "streamed": false
+  },
+  {
+    "name": "es",
+    "key": "es",
+    "width": 160,
+    "height": 107,
+    "format": "RGB24",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 8,
+    "streamed": false
+  },
+  {
+    "name": "gb",
+    "key": "gb",
+    "width": 160,
+    "height": 80,
+    "format": "RGB24",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 9,
+    "streamed": false
+  },
+  {
+    "name": "pt",
+    "key": "pt",
+    "width": 160,
+    "height": 107,
+    "format": "RGB24",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 10,
+    "streamed": false
+  },
+  {
+    "name": "tr",
+    "key": "tr",
+    "width": 160,
+    "height": 107,
+    "format": "RGB24",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 11,
+    "streamed": false
+  },
+  {
+    "name": "ro",
+    "key": "ro",
+    "width": 160,
+    "height": 107,
+    "format": "RGB24",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 12,
+    "streamed": false
+  },
+  {
+    "name": "ua",
+    "key": "ua",
+    "width": 160,
+    "height": 107,
+    "format": "RGB24",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 13,
+    "streamed": false
+  },
+  {
+    "name": "cs",
+    "key": "cs",
+    "width": 160,
+    "height": 107,
+    "format": "RGB24",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 14,
+    "streamed": false
+  },
+  {
+    "name": "pl",
+    "key": "pl",
+    "width": 160,
+    "height": 107,
+    "format": "RGB24",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 15,
+    "streamed": false
+  },
+  {
+    "name": "ru",
+    "key": "ru",
+    "width": 160,
+    "height": 107,
+    "format": "RGB24",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 16,
+    "streamed": false
+  },
+  {
+    "name": "fr",
+    "key": "fr",
+    "width": 160,
+    "height": 107,
+    "format": "RGB24",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 17,
+    "streamed": false
+  },
+  {
+    "name": "fi",
+    "key": "fi",
+    "width": 160,
+    "height": 107,
+    "format": "RGB24",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 18,
+    "streamed": false
+  },
+  {
+    "name": "de",
+    "key": "de",
+    "width": 160,
+    "height": 96,
+    "format": "RGB24",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 19,
+    "streamed": false
+  },
+  {
+    "name": "nl",
+    "key": "nl",
+    "width": 160,
+    "height": 107,
+    "format": "RGB24",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 20,
+    "streamed": false
+  },
+  {
+    "name": "vi",
+    "key": "vi",
+    "width": 160,
+    "height": 107,
+    "format": "RGB24",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 21,
+    "streamed": false
+  },
+  {
+    "name": "sv",
+    "key": "sv",
+    "width": 160,
+    "height": 107,
+    "format": "RGB24",
+    "container": "assets/bin/Data/sharedassets1.assets",
+    "path_id": 22,
+    "streamed": false
+  },
+  {
+    "name": "Free Flat Media Right Double Icon",
+    "key": "Free Flat Media Right Double Icon",
+    "width": 256,
+    "height": 256,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/sharedassets19.assets",
+    "path_id": 2,
+    "streamed": false
+  },
+  {
+    "name": "icon_close",
+    "key": "icon_close",
+    "width": 128,
+    "height": 128,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/sharedassets19.assets",
+    "path_id": 3,
+    "streamed": false
+  },
+  {
+    "name": "Free Flat Home Icon",
+    "key": "Free Flat Home Icon",
+    "width": 256,
+    "height": 256,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/sharedassets19.assets",
+    "path_id": 4,
+    "streamed": false
+  },
+  {
+    "name": "Free Flat Media Left Full Icon",
+    "key": "Free Flat Media Left Full Icon",
+    "width": 256,
+    "height": 256,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/sharedassets19.assets",
+    "path_id": 5,
+    "streamed": false
+  },
+  {
+    "name": "square256_round20px_fill",
+    "key": "square256_round20px_fill",
+    "width": 256,
+    "height": 256,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/sharedassets19.assets",
+    "path_id": 6,
+    "streamed": false
+  },
+  {
+    "name": "Free Flat Arrow 3 S Icon",
+    "key": "Free Flat Arrow 3 S Icon",
+    "width": 256,
+    "height": 256,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/sharedassets19.assets",
+    "path_id": 7,
+    "streamed": false
+  },
+  {
+    "name": "icon_menu",
+    "key": "icon_menu",
+    "width": 128,
+    "height": 128,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/sharedassets19.assets",
+    "path_id": 8,
+    "streamed": false
+  },
+  {
+    "name": "square128_round5px_fill",
+    "key": "square128_round5px_fill",
+    "width": 128,
+    "height": 128,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/sharedassets19.assets",
+    "path_id": 9,
+    "streamed": false
+  },
+  {
+    "name": "Free Flat Media Pause Icon",
+    "key": "Free Flat Media Pause Icon",
+    "width": 256,
+    "height": 256,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/sharedassets19.assets",
+    "path_id": 10,
+    "streamed": false
+  },
+  {
+    "name": "Free Flat Media Right Icon",
+    "key": "Free Flat Media Right Icon",
+    "width": 256,
+    "height": 256,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/sharedassets19.assets",
+    "path_id": 11,
+    "streamed": false
+  },
+  {
+    "name": "square128_round10px_stroke3px",
+    "key": "square128_round10px_stroke3px",
+    "width": 128,
+    "height": 128,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/sharedassets19.assets",
+    "path_id": 12,
+    "streamed": false
+  },
+  {
+    "name": "icon_arrow",
+    "key": "icon_arrow",
+    "width": 128,
+    "height": 128,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/sharedassets19.assets",
+    "path_id": 13,
+    "streamed": false
+  },
+  {
+    "name": "square256_fill",
+    "key": "square256_fill",
+    "width": 256,
+    "height": 256,
+    "format": "ETC_RGB4",
+    "container": "assets/bin/Data/sharedassets19.assets",
+    "path_id": 14,
+    "streamed": false
+  },
+  {
+    "name": "square128_round5px_stroke3px",
+    "key": "square128_round5px_stroke3px",
+    "width": 128,
+    "height": 128,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/sharedassets19.assets",
+    "path_id": 15,
+    "streamed": false
+  },
+  {
+    "name": "Free Flat Media Left Double Icon",
+    "key": "Free Flat Media Left Double Icon",
+    "width": 256,
+    "height": 256,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/sharedassets19.assets",
+    "path_id": 16,
+    "streamed": false
+  },
+  {
+    "name": "square128_round10px_fill",
+    "key": "square128_round10px_fill",
+    "width": 128,
+    "height": 128,
+    "format": "ETC2_RGBA8",
+    "container": "assets/bin/Data/sharedassets19.assets",
+    "path_id": 17,
+    "streamed": false
+  },
+  {
+    "name": "Default-ParticleSystem",
+    "key": "Default-ParticleSystem",
+    "width": 64,
+    "height": 64,
+    "format": "RGBA32",
+    "container": "assets/bin/Data/sharedassets22.assets",
+    "path_id": 15,
+    "streamed": false
+  }
+]
