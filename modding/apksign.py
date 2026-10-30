@@ -184,6 +184,26 @@ def load_key_and_cert(key_path: str | None, cert_path: str | None,
     return key, cert, created
 
 
+def export_pkcs12(key, cert, path: str, password: str = "noomi",
+                  alias: str = "noomi") -> str:
+    """Сохраняет ключ+сертификат в .p12 — такой файл понимают MT Manager,
+    KeyStore Explorer, jarsigner и apksigner (--ks с типом PKCS12)."""
+    from cryptography.hazmat.primitives.serialization import pkcs12
+
+    blob = pkcs12.serialize_key_and_certificates(
+        name=alias.encode(),
+        key=key,
+        cert=cert,
+        cas=None,
+        encryption_algorithm=serialization.BestAvailableEncryption(
+            password.encode()),
+    )
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    with open(path, "wb") as f:
+        f.write(blob)
+    return path
+
+
 # ---------------------------------------------------------------------------
 # сборка блока v2
 # ---------------------------------------------------------------------------

@@ -8,7 +8,7 @@
 |---|---|
 | **`NoomiClone-modded.apk`** | Готовый APK: закатное небо, песчаный пол, аметистовая монетка. **Подписан** (схема v2, RSA-2048/SHA-256) — Android 7+ примет установку. 38 МБ |
 | `archive (8).zip` | Исходная сборка (внутри `NoomiClone.apk`), как её загрузили |
-| `modding/` | Скрипты: разбор APK, выгрузка/замена текстур, замена иконки, **подпись APK на чистом Python** |
+| `modding/` | Скрипты: разбор APK, выгрузка/замена текстур, замена иконки, **подпись APK на чистом Python**, сборка установочного комплекта из XAPK |
 
 Скачать APK: откройте файл в списке выше → кнопка **Download** (или
 [прямая ссылка](https://raw.githubusercontent.com/stepan05062014-beep/Noomieclone/main/NoomiClone-modded.apk)).
@@ -40,6 +40,22 @@ adb install-multiple NoomiClone-modded.apk split_config.arm64_v8a.apk
 
 Ещё два нюанса: подпись не совпадает с оригиналом из Play (сначала удалите игру),
 и внутри стоит защита PairIP, которая может блокировать переподписанные сборки.
+
+## Есть XAPK (полный бандл)?
+
+В этой сборке нет `lib/*.so` — их надо взять из XAPK/APKM и подписать **тем же
+ключом**, что и base, иначе Android не даст установить комплект. Одна команда:
+
+```bash
+python modding/build_installable.py --xapk Game.xapk --out ready/ \
+       --replacements modding/examples
+# -> ready/base-signed.apk + ready/split_config.arm64_v8a-signed.apk
+# -> adb install-multiple base-signed.apk split_config.arm64_v8a-signed.apk
+```
+
+Как передать большой файл в репозиторий (лимиты): веб-загрузка — 25 МБ,
+`git push` — 100 МБ на файл, Release — 2 ГБ. 83-мегабайтный XAPK проходит
+обычным `git push`; сжимать его дополнительно бессмысленно.
 
 ## Инструменты
 
