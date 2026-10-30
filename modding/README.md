@@ -4,16 +4,32 @@
 IL2CPP, пакет `com.JamesWest.NoomiClone`, версия 2.4.3.1) — без Unity Editor и без
 исходников проекта.
 
+> **Готовый файл уже собран:** `NoomiClone-modded.apk` лежит в корне репозитория
+> (рядом с `archive (8).zip`). В нём три замены из `examples/`.
+> Что именно поменялось — видно на картинке `modding/previews/before-after.png`.
+
 ```
+NoomiClone-modded.apk        # собранный APK (38 МБ, с заменами из examples/)
+
 modding/
 ├── noomi_visual.py          # сам инструмент (list / extract / apply / icon)
 ├── noomi-textures.json      # инвентаризация всех 123 текстур внутри APK
-├── examples/                # готовые примеры замен (см. preview_before_after.png)
+├── examples/                # набор замен, который вшит в собранный APK
 │   ├── Sunny Days - Seamless.png   # небо -> закат
 │   ├── Floor Cement.png            # цементный пол -> песчаник
-│   ├── NoomiCoin.png               # монетка -> аметист
-│   └── preview_before_after.png
+│   └── NoomiCoin.png               # монетка -> аметист
+├── previews/
+│   └── before-after.png     # сравнение «до / после»
 └── README.md
+```
+
+Пересобрать такой же файл с нуля:
+
+```bash
+unzip "archive (8).zip"                      # достаёт NoomiClone.apk
+pip install UnityPy pillow
+python modding/noomi_visual.py apply --apk NoomiClone.apk \
+       --replacements modding/examples --out NoomiClone-modded.apk
 ```
 
 ## Установка
